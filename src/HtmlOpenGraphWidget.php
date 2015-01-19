@@ -1,5 +1,5 @@
 <?php
-namespace Mouf\Html\Widgets\BaseHtmlWidget;
+namespace Mouf\Html\Widgets\Opengraph;
 use Mouf\Html\HtmlElement\HtmlElementInterface;
 /**
  * 
