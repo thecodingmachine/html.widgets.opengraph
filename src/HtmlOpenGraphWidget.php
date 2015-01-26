@@ -70,7 +70,21 @@ class HtmlOpenGraphWidget implements HtmlElementInterface{
 	 * TODO: add support of video
 	 * TODO: add support of music
 	 */
-	function __construct($title, $type, $url, $imageObject, $audio = null, $description = null, $determiner = null, $local = null, $local_alternate = null, $site_name = null, $video = null) {
+	/**
+	 * 
+	 * @param string $title
+	 * @param string $type
+	 * @param string $url
+	 * @param HtmlOpenGraphImageWidget $imageObject
+	 * @param string $audio
+	 * @param string $description
+	 * @param string $determiner
+	 * @param string $local
+	 * @param string $local_alternate
+	 * @param string $site_name
+	 * @param string $video
+	 */
+	function __construct(string $title, string $type, string $url, HtmlOpenGraphImageWidget $imageObject, string $audio = null, string $description = null, string $determiner = null, string $local = null, string $local_alternate = null, string $site_name = null, string $video = null) {
 		$this->title = $title;
 		$this->type = $type;
 		$this->url = $url;
@@ -94,6 +108,10 @@ class HtmlOpenGraphWidget implements HtmlElementInterface{
 	public function setUrl($url) {
 		$this->url = $url;
 	}
+	/**
+	 * 
+	 * @param HtmlOpenGraphImageWidget $imageObject
+	 */
 	public function setImageObject($imageObject) {
 		$this->imageObject = $imageObject;
 	}
