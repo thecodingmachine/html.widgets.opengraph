@@ -84,7 +84,7 @@ class HtmlOpenGraphWidget implements HtmlElementInterface{
 	 * @param string $site_name
 	 * @param string $video
 	 */
-	function __construct(string $title, string $type, string $url, HtmlOpenGraphImageWidget $imageObject, string $audio = null, string $description = null, string $determiner = null, string $local = null, string $local_alternate = null, string $site_name = null, string $video = null) {
+	function __construct($title, $type, $url, HtmlOpenGraphImageWidget $imageObject, $audio = null, $description = null, $determiner = null, $local = null, $local_alternate = null, $site_name = null, $video = null) {
 		$this->title = $title;
 		$this->type = $type;
 		$this->url = $url;
