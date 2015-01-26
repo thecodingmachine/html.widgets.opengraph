@@ -113,9 +113,14 @@ class HtmlOpenGraphImageWidget implements HtmlElementInterface{
 		return $html;
 	}
 	
-	public function toHtml() {
+	public function getHtml() {
 		if ($this->hasChange == true)
 			$this->html = $this->constructHtml();
 		return $this->html;
 	}
+	
+	public function toHtml() {
+		echo $this->getHtml();
+	}
+	
 }
