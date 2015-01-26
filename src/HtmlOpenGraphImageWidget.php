@@ -50,7 +50,7 @@ class HtmlOpenGraphImageWidget implements HtmlElementInterface{
 	 * @param int $width
 	 * @param int $height
 	 */
-	function __construct(string $url, string $secure_url = null, string $type = null, int $width = null, int $height = null) {
+	function __construct(\string $url, string $secure_url = null, string $type = null, int $width = null, int $height = null) {
 		$this->url = $url;
 		$this->secure_url = $secure_url;
 		$this->type = $type;
