@@ -80,11 +80,11 @@ class HtmlOpenGraphWidget implements HtmlElementInterface{
 	 * @param string $description
 	 * @param string $determiner
 	 * @param string $local
-	 * @param string $local_alternate
+	 * @param array<string> $local_alternate
 	 * @param string $site_name
 	 * @param string $video
 	 */
-	function __construct($title, $type, $url, HtmlOpenGraphImageWidget $imageObject, $audio = null, $description = null, $determiner = null, $local = null, $local_alternate = null, $site_name = null, $video = null) {
+	function __construct($title, $type, $url, HtmlOpenGraphImageWidget $imageObject, $audio = null, $description = null, $determiner = null, $local = null, array $local_alternate = null, $site_name = null, $video = null) {
 		$this->title = $title;
 		$this->type = $type;
 		$this->url = $url;
@@ -122,9 +122,10 @@ class HtmlOpenGraphWidget implements HtmlElementInterface{
 		$html .= $this->description === null ? "" : '<meta property="og:description" content="'.$this->description.'" />';
 		$html .= $this->determiner === null ? "" : '<meta property="og:determiner" content="'.$this->determiner.'" />';
 		$html .= $this->locale === null ? "" : '<meta property="og:locale" content="'.$this->locale.'" />';
-		foreach ($this->locale_alternate as $loc_alt) {
-			$html .= ($loc_alt === null || empty($loc_alt)) ? "" : '<meta property="og:locale_alternate" content="'.$loc_alt.'" />';
-		}
+		if ($this->locale_alternate !== null)
+			foreach ($this->locale_alternate as $loc_alt) {
+				$html .= ($loc_alt === null || empty($loc_alt)) ? "" : '<meta property="og:locale_alternate" content="'.$loc_alt.'" />';
+			}
 		$html .= $this->site_name === null ? "" : '<meta property="og:site_name" content="'.$this->site_name.'" />';
 		$html .= $this->video === null ? "" : '<meta property="og:video" content="'.$this->video.'" />';
 		return $html;
