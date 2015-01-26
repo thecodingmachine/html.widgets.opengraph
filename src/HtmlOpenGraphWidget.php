@@ -137,7 +137,7 @@ class HtmlOpenGraphWidget implements HtmlElementInterface{
 				<meta property="og:type" content="'.$this->type.'" />
 				<meta property="og:url" content="'.$this->url.'" />';
 		$html .= $this->getOptionnalMetaData();
-		$html .= $this->imageObject->toHtml();
+		$html .= $this->imageObject->getHtml();
 		return $html;
 	}
 	function toHtml() {
