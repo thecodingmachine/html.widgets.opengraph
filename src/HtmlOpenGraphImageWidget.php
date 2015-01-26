@@ -26,12 +26,12 @@ class HtmlOpenGraphImageWidget implements HtmlElementInterface{
 	 * 
 	 * @var int
 	 */
-	private $width = -1;
+	private $width = null;
 	/**
 	 * 
 	 * @var int
 	 */
-	private $height = -1;
+	private $height = null;
 	/**
 	 * 
 	 * @var bool
@@ -50,7 +50,7 @@ class HtmlOpenGraphImageWidget implements HtmlElementInterface{
 	 * @param int $width
 	 * @param int $height
 	 */
-	function __construct(string $url, string $secure_url = null, string $type = null, int $width = -1, int $height = -1) {
+	function __construct(string $url, string $secure_url = null, string $type = null, int $width = null, int $height = null) {
 		$this->url = $url;
 		$this->secure_url = $secure_url;
 		$this->type = $type;
@@ -108,8 +108,8 @@ class HtmlOpenGraphImageWidget implements HtmlElementInterface{
 		$html .= '<meta property="og:image" content="'.$this->url.'" />';
 		$html .= ($this->secure_url === null ? '' : '<meta property="og:image:secure_url" content="'.$this->secure_url.'" />');
 		$html .= ($this->type === null ? '' : '<meta property="og:image:type" content="'.$this->type.'" />');
-		$html .= ($this->width === -1 ? '' : '<meta property="og:image:width" content="'.$this->width.'" />');
-		$html .= ($this->height === -1 ? '' : '<meta property="og:image:height" content="'.$this->height.'" />');
+		$html .= ($this->width === null ? '' : '<meta property="og:image:width" content="'.$this->width.'" />');
+		$html .= ($this->height === null ? '' : '<meta property="og:image:height" content="'.$this->height.'" />');
 		return $html;
 	}
 	
